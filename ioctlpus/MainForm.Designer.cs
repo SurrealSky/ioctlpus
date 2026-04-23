@@ -30,18 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpPanes = new System.Windows.Forms.TableLayoutPanel();
-            this.gbRightPane = new System.Windows.Forms.GroupBox();
-            this.hbOutput = new Be.Windows.Forms.HexBox();
-            this.gbLeftPane = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.hbInputCb = new System.Windows.Forms.CheckBox();
-            this.hbInputTb = new System.Windows.Forms.TextBox();
-            this.hbInput = new Be.Windows.Forms.HexBox();
             this.tlpTop = new System.Windows.Forms.TableLayoutPanel();
             this.pnlReqParams = new System.Windows.Forms.Panel();
             this.lblOutputSize = new System.Windows.Forms.Label();
+            this.hbInputCb = new System.Windows.Forms.CheckBox();
             this.nudOutputSize = new System.Windows.Forms.NumericUpDown();
+            this.hbInputTb = new System.Windows.Forms.TextBox();
             this.lblRepeat = new System.Windows.Forms.Label();
             this.nudRepeat = new System.Windows.Forms.NumericUpDown();
             this.lblInputSize = new System.Windows.Forms.Label();
@@ -62,11 +56,15 @@
             this.olvColumnRetVal = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnBytesReturned = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnTime = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.tlpPanes = new System.Windows.Forms.TableLayoutPanel();
+            this.gbRightPane = new System.Windows.Forms.GroupBox();
+            this.hbOutput = new Be.Windows.Forms.HexBox();
+            this.gbLeftPane = new System.Windows.Forms.GroupBox();
+            this.hbInput = new Be.Windows.Forms.HexBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.hboutputtb = new System.Windows.Forms.TextBox();
+            this.hboutputcb = new System.Windows.Forms.CheckBox();
             this.tlpMain.SuspendLayout();
-            this.tlpPanes.SuspendLayout();
-            this.gbRightPane.SuspendLayout();
-            this.gbLeftPane.SuspendLayout();
             this.tlpTop.SuspendLayout();
             this.pnlReqParams.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudOutputSize)).BeginInit();
@@ -74,6 +72,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudInputSize)).BeginInit();
             this.gbRequestHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tlvRequestHistory)).BeginInit();
+            this.tlpPanes.SuspendLayout();
+            this.gbRightPane.SuspendLayout();
+            this.gbLeftPane.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpMain
@@ -83,114 +84,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpMain.ColumnCount = 1;
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.Controls.Add(this.tlpPanes, 0, 1);
             this.tlpMain.Controls.Add(this.tlpTop, 0, 0);
             this.tlpMain.Controls.Add(this.gbRequestHistory, 0, 2);
+            this.tlpMain.Controls.Add(this.tlpPanes, 0, 1);
             this.tlpMain.Location = new System.Drawing.Point(12, 11);
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 3;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 83F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tlpMain.Size = new System.Drawing.Size(848, 613);
+            this.tlpMain.Size = new System.Drawing.Size(948, 723);
             this.tlpMain.TabIndex = 0;
-            // 
-            // tlpPanes
-            // 
-            this.tlpPanes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpPanes.ColumnCount = 2;
-            this.tlpPanes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpPanes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpPanes.Controls.Add(this.gbRightPane, 1, 0);
-            this.tlpPanes.Controls.Add(this.gbLeftPane, 0, 0);
-            this.tlpPanes.Location = new System.Drawing.Point(3, 86);
-            this.tlpPanes.Name = "tlpPanes";
-            this.tlpPanes.RowCount = 1;
-            this.tlpPanes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpPanes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 314F));
-            this.tlpPanes.Size = new System.Drawing.Size(842, 312);
-            this.tlpPanes.TabIndex = 0;
-            // 
-            // gbRightPane
-            // 
-            this.gbRightPane.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbRightPane.Controls.Add(this.hbOutput);
-            this.gbRightPane.Location = new System.Drawing.Point(424, 3);
-            this.gbRightPane.Name = "gbRightPane";
-            this.gbRightPane.Size = new System.Drawing.Size(415, 306);
-            this.gbRightPane.TabIndex = 1;
-            this.gbRightPane.TabStop = false;
-            this.gbRightPane.Text = "Output Buffer";
-            // 
-            // hbOutput
-            // 
-            this.hbOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.hbOutput.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hbOutput.InfoForeColor = System.Drawing.Color.Empty;
-            this.hbOutput.Location = new System.Drawing.Point(6, 18);
-            this.hbOutput.Name = "hbOutput";
-            this.hbOutput.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbOutput.Size = new System.Drawing.Size(403, 283);
-            this.hbOutput.TabIndex = 0;
-            // 
-            // gbLeftPane
-            // 
-            this.gbLeftPane.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbLeftPane.Controls.Add(this.hbInput);
-            this.gbLeftPane.Location = new System.Drawing.Point(3, 3);
-            this.gbLeftPane.Name = "gbLeftPane";
-            this.gbLeftPane.Size = new System.Drawing.Size(415, 306);
-            this.gbLeftPane.TabIndex = 0;
-            this.gbLeftPane.TabStop = false;
-            this.gbLeftPane.Text = "Input Buffer";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(395, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 12);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "输入字符串：";
-            // 
-            // hbInputCb
-            // 
-            this.hbInputCb.AutoSize = true;
-            this.hbInputCb.Location = new System.Drawing.Point(722, 49);
-            this.hbInputCb.Name = "hbInputCb";
-            this.hbInputCb.Size = new System.Drawing.Size(60, 16);
-            this.hbInputCb.TabIndex = 3;
-            this.hbInputCb.Text = "宽字节";
-            this.hbInputCb.UseVisualStyleBackColor = true;
-            // 
-            // hbInputTb
-            // 
-            this.hbInputTb.Location = new System.Drawing.Point(395, 45);
-            this.hbInputTb.Name = "hbInputTb";
-            this.hbInputTb.Size = new System.Drawing.Size(319, 21);
-            this.hbInputTb.TabIndex = 0;
-            this.hbInputTb.TextChanged += new System.EventHandler(this.hbInputTb_TextChanged);
-            // 
-            // hbInput
-            // 
-            this.hbInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.hbInput.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hbInput.InfoForeColor = System.Drawing.Color.Empty;
-            this.hbInput.Location = new System.Drawing.Point(6, 18);
-            this.hbInput.Name = "hbInput";
-            this.hbInput.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbInput.Size = new System.Drawing.Size(403, 283);
-            this.hbInput.TabIndex = 0;
             // 
             // tlpTop
             // 
@@ -205,7 +109,7 @@
             this.tlpTop.Name = "tlpTop";
             this.tlpTop.RowCount = 1;
             this.tlpTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTop.Size = new System.Drawing.Size(842, 77);
+            this.tlpTop.Size = new System.Drawing.Size(942, 77);
             this.tlpTop.TabIndex = 2;
             // 
             // pnlReqParams
@@ -213,7 +117,8 @@
             this.pnlReqParams.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlReqParams.Controls.Add(this.label1);
+            this.pnlReqParams.Controls.Add(this.hboutputcb);
+            this.pnlReqParams.Controls.Add(this.hboutputtb);
             this.pnlReqParams.Controls.Add(this.lblOutputSize);
             this.pnlReqParams.Controls.Add(this.hbInputCb);
             this.pnlReqParams.Controls.Add(this.nudOutputSize);
@@ -229,30 +134,40 @@
             this.pnlReqParams.Controls.Add(this.btnSend);
             this.pnlReqParams.Location = new System.Drawing.Point(3, 3);
             this.pnlReqParams.Name = "pnlReqParams";
-            this.pnlReqParams.Size = new System.Drawing.Size(836, 71);
+            this.pnlReqParams.Size = new System.Drawing.Size(936, 71);
             this.pnlReqParams.TabIndex = 0;
             // 
             // lblOutputSize
             // 
             this.lblOutputSize.AutoSize = true;
-            this.lblOutputSize.Location = new System.Drawing.Point(244, 49);
+            this.lblOutputSize.Location = new System.Drawing.Point(106, 52);
             this.lblOutputSize.Name = "lblOutputSize";
             this.lblOutputSize.Size = new System.Drawing.Size(77, 12);
             this.lblOutputSize.TabIndex = 10;
             this.lblOutputSize.Text = "Output Size:";
             // 
+            // hbInputCb
+            // 
+            this.hbInputCb.AutoSize = true;
+            this.hbInputCb.Location = new System.Drawing.Point(588, 32);
+            this.hbInputCb.Name = "hbInputCb";
+            this.hbInputCb.Size = new System.Drawing.Size(144, 16);
+            this.hbInputCb.TabIndex = 3;
+            this.hbInputCb.Text = "指定输入宽字节字符串";
+            this.hbInputCb.UseVisualStyleBackColor = true;
+            // 
             // nudOutputSize
             // 
             this.nudOutputSize.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudOutputSize.Hexadecimal = true;
-            this.nudOutputSize.Location = new System.Drawing.Point(330, 48);
+            this.nudOutputSize.Location = new System.Drawing.Point(192, 51);
             this.nudOutputSize.Maximum = new decimal(new int[] {
             1048576,
             0,
             0,
             0});
             this.nudOutputSize.Name = "nudOutputSize";
-            this.nudOutputSize.Size = new System.Drawing.Size(50, 20);
+            this.nudOutputSize.Size = new System.Drawing.Size(57, 20);
             this.nudOutputSize.TabIndex = 5;
             this.nudOutputSize.Value = new decimal(new int[] {
             32,
@@ -260,10 +175,18 @@
             0,
             0});
             // 
+            // hbInputTb
+            // 
+            this.hbInputTb.Location = new System.Drawing.Point(259, 28);
+            this.hbInputTb.Name = "hbInputTb";
+            this.hbInputTb.Size = new System.Drawing.Size(319, 21);
+            this.hbInputTb.TabIndex = 0;
+            this.hbInputTb.TextChanged += new System.EventHandler(this.hbInputTb_TextChanged);
+            // 
             // lblRepeat
             // 
             this.lblRepeat.AutoSize = true;
-            this.lblRepeat.Location = new System.Drawing.Point(279, 28);
+            this.lblRepeat.Location = new System.Drawing.Point(571, 7);
             this.lblRepeat.Name = "lblRepeat";
             this.lblRepeat.Size = new System.Drawing.Size(47, 12);
             this.lblRepeat.TabIndex = 8;
@@ -272,7 +195,7 @@
             // nudRepeat
             // 
             this.nudRepeat.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudRepeat.Location = new System.Drawing.Point(330, 26);
+            this.nudRepeat.Location = new System.Drawing.Point(622, 5);
             this.nudRepeat.Name = "nudRepeat";
             this.nudRepeat.Size = new System.Drawing.Size(50, 20);
             this.nudRepeat.TabIndex = 3;
@@ -280,7 +203,7 @@
             // lblInputSize
             // 
             this.lblInputSize.AutoSize = true;
-            this.lblInputSize.Location = new System.Drawing.Point(106, 48);
+            this.lblInputSize.Location = new System.Drawing.Point(106, 29);
             this.lblInputSize.Name = "lblInputSize";
             this.lblInputSize.Size = new System.Drawing.Size(71, 12);
             this.lblInputSize.TabIndex = 6;
@@ -289,7 +212,7 @@
             // lblIOCTLCode
             // 
             this.lblIOCTLCode.AutoSize = true;
-            this.lblIOCTLCode.Location = new System.Drawing.Point(106, 28);
+            this.lblIOCTLCode.Location = new System.Drawing.Point(396, 7);
             this.lblIOCTLCode.Name = "lblIOCTLCode";
             this.lblIOCTLCode.Size = new System.Drawing.Size(71, 12);
             this.lblIOCTLCode.TabIndex = 5;
@@ -298,7 +221,7 @@
             // tbIOCTL
             // 
             this.tbIOCTL.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbIOCTL.Location = new System.Drawing.Point(181, 25);
+            this.tbIOCTL.Location = new System.Drawing.Point(472, 4);
             this.tbIOCTL.Name = "tbIOCTL";
             this.tbIOCTL.Size = new System.Drawing.Size(90, 20);
             this.tbIOCTL.TabIndex = 2;
@@ -326,7 +249,7 @@
             // 
             this.nudInputSize.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudInputSize.Hexadecimal = true;
-            this.nudInputSize.Location = new System.Drawing.Point(181, 47);
+            this.nudInputSize.Location = new System.Drawing.Point(192, 28);
             this.nudInputSize.Maximum = new decimal(new int[] {
             1048576,
             0,
@@ -366,9 +289,9 @@
             this.gbRequestHistory.Controls.Add(this.btnDeleteRequest);
             this.gbRequestHistory.Controls.Add(this.btnOpenDB);
             this.gbRequestHistory.Controls.Add(this.tlvRequestHistory);
-            this.gbRequestHistory.Location = new System.Drawing.Point(3, 404);
+            this.gbRequestHistory.Location = new System.Drawing.Point(3, 470);
             this.gbRequestHistory.Name = "gbRequestHistory";
-            this.gbRequestHistory.Size = new System.Drawing.Size(842, 206);
+            this.gbRequestHistory.Size = new System.Drawing.Size(942, 250);
             this.gbRequestHistory.TabIndex = 3;
             this.gbRequestHistory.TabStop = false;
             this.gbRequestHistory.Text = "Request History";
@@ -378,7 +301,7 @@
             this.btnSaveDB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaveDB.Enabled = false;
             this.btnSaveDB.Image = global::ioctlpus.Properties.Resources.database_save;
-            this.btnSaveDB.Location = new System.Drawing.Point(804, 53);
+            this.btnSaveDB.Location = new System.Drawing.Point(904, 53);
             this.btnSaveDB.Name = "btnSaveDB";
             this.btnSaveDB.Size = new System.Drawing.Size(32, 30);
             this.btnSaveDB.TabIndex = 3;
@@ -391,9 +314,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbFilters.Enabled = false;
             this.tbFilters.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFilters.Location = new System.Drawing.Point(6, 179);
+            this.tbFilters.Location = new System.Drawing.Point(6, 223);
             this.tbFilters.Name = "tbFilters";
-            this.tbFilters.Size = new System.Drawing.Size(792, 20);
+            this.tbFilters.Size = new System.Drawing.Size(892, 20);
             this.tbFilters.TabIndex = 1;
             this.tbFilters.TextChanged += new System.EventHandler(this.tbFilters_TextChanged);
             // 
@@ -401,7 +324,7 @@
             // 
             this.btnStarRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStarRequest.Image = global::ioctlpus.Properties.Resources.star;
-            this.btnStarRequest.Location = new System.Drawing.Point(804, 88);
+            this.btnStarRequest.Location = new System.Drawing.Point(904, 88);
             this.btnStarRequest.Name = "btnStarRequest";
             this.btnStarRequest.Size = new System.Drawing.Size(32, 30);
             this.btnStarRequest.TabIndex = 4;
@@ -414,7 +337,7 @@
             this.btnDeleteRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeleteRequest.Enabled = false;
             this.btnDeleteRequest.Image = global::ioctlpus.Properties.Resources.delete;
-            this.btnDeleteRequest.Location = new System.Drawing.Point(804, 123);
+            this.btnDeleteRequest.Location = new System.Drawing.Point(904, 123);
             this.btnDeleteRequest.Name = "btnDeleteRequest";
             this.btnDeleteRequest.Size = new System.Drawing.Size(32, 30);
             this.btnDeleteRequest.TabIndex = 5;
@@ -426,7 +349,7 @@
             this.btnOpenDB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOpenDB.Enabled = false;
             this.btnOpenDB.Image = global::ioctlpus.Properties.Resources.database_add;
-            this.btnOpenDB.Location = new System.Drawing.Point(804, 18);
+            this.btnOpenDB.Location = new System.Drawing.Point(904, 18);
             this.btnOpenDB.Name = "btnOpenDB";
             this.btnOpenDB.Size = new System.Drawing.Size(32, 30);
             this.btnOpenDB.TabIndex = 2;
@@ -454,7 +377,7 @@
             this.tlvRequestHistory.Name = "tlvRequestHistory";
             this.tlvRequestHistory.OwnerDraw = true;
             this.tlvRequestHistory.ShowGroups = false;
-            this.tlvRequestHistory.Size = new System.Drawing.Size(792, 156);
+            this.tlvRequestHistory.Size = new System.Drawing.Size(892, 200);
             this.tlvRequestHistory.TabIndex = 0;
             this.tlvRequestHistory.UseCompatibleStateImageBehavior = false;
             this.tlvRequestHistory.View = System.Windows.Forms.View.Details;
@@ -495,25 +418,109 @@
             this.olvColumnTime.Text = "Time";
             this.olvColumnTime.Width = 80;
             // 
+            // tlpPanes
+            // 
+            this.tlpPanes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpPanes.ColumnCount = 2;
+            this.tlpPanes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpPanes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpPanes.Controls.Add(this.gbRightPane, 1, 0);
+            this.tlpPanes.Controls.Add(this.gbLeftPane, 0, 0);
+            this.tlpPanes.Location = new System.Drawing.Point(3, 86);
+            this.tlpPanes.Name = "tlpPanes";
+            this.tlpPanes.RowCount = 1;
+            this.tlpPanes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpPanes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tlpPanes.Size = new System.Drawing.Size(942, 378);
+            this.tlpPanes.TabIndex = 0;
+            // 
+            // gbRightPane
+            // 
+            this.gbRightPane.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbRightPane.Controls.Add(this.hbOutput);
+            this.gbRightPane.Location = new System.Drawing.Point(474, 3);
+            this.gbRightPane.Name = "gbRightPane";
+            this.gbRightPane.Size = new System.Drawing.Size(465, 372);
+            this.gbRightPane.TabIndex = 1;
+            this.gbRightPane.TabStop = false;
+            this.gbRightPane.Text = "Output Buffer";
+            // 
+            // hbOutput
+            // 
+            this.hbOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.hbOutput.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hbOutput.InfoForeColor = System.Drawing.Color.Empty;
+            this.hbOutput.Location = new System.Drawing.Point(6, 18);
+            this.hbOutput.Name = "hbOutput";
+            this.hbOutput.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbOutput.Size = new System.Drawing.Size(453, 349);
+            this.hbOutput.TabIndex = 0;
+            // 
+            // gbLeftPane
+            // 
+            this.gbLeftPane.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbLeftPane.Controls.Add(this.hbInput);
+            this.gbLeftPane.Location = new System.Drawing.Point(3, 3);
+            this.gbLeftPane.Name = "gbLeftPane";
+            this.gbLeftPane.Size = new System.Drawing.Size(465, 372);
+            this.gbLeftPane.TabIndex = 0;
+            this.gbLeftPane.TabStop = false;
+            this.gbLeftPane.Text = "Input Buffer";
+            // 
+            // hbInput
+            // 
+            this.hbInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.hbInput.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hbInput.InfoForeColor = System.Drawing.Color.Empty;
+            this.hbInput.Location = new System.Drawing.Point(6, 18);
+            this.hbInput.Name = "hbInput";
+            this.hbInput.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbInput.Size = new System.Drawing.Size(453, 349);
+            this.hbInput.TabIndex = 0;
+            // 
             // toolTip
             // 
             this.toolTip.AutomaticDelay = 250;
+            // 
+            // hboutputtb
+            // 
+            this.hboutputtb.Location = new System.Drawing.Point(258, 49);
+            this.hboutputtb.Name = "hboutputtb";
+            this.hboutputtb.Size = new System.Drawing.Size(319, 21);
+            this.hboutputtb.TabIndex = 12;
+            // 
+            // hboutputcb
+            // 
+            this.hboutputcb.AutoSize = true;
+            this.hboutputcb.Location = new System.Drawing.Point(588, 52);
+            this.hboutputcb.Name = "hboutputcb";
+            this.hboutputcb.Size = new System.Drawing.Size(96, 16);
+            this.hboutputcb.TabIndex = 13;
+            this.hboutputcb.Text = "指定输出地址";
+            this.hboutputcb.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(872, 635);
+            this.ClientSize = new System.Drawing.Size(972, 745);
             this.Controls.Add(this.tlpMain);
             this.MinimumSize = new System.Drawing.Size(830, 557);
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "ioctlpus";
             this.tlpMain.ResumeLayout(false);
-            this.tlpPanes.ResumeLayout(false);
-            this.gbRightPane.ResumeLayout(false);
-            this.gbLeftPane.ResumeLayout(false);
             this.tlpTop.ResumeLayout(false);
             this.pnlReqParams.ResumeLayout(false);
             this.pnlReqParams.PerformLayout();
@@ -523,6 +530,9 @@
             this.gbRequestHistory.ResumeLayout(false);
             this.gbRequestHistory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tlvRequestHistory)).EndInit();
+            this.tlpPanes.ResumeLayout(false);
+            this.gbRightPane.ResumeLayout(false);
+            this.gbLeftPane.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -561,8 +571,9 @@
         private System.Windows.Forms.Button btnSaveDB;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.CheckBox hbInputCb;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox hbInputTb;
+        private System.Windows.Forms.TextBox hboutputtb;
+        private System.Windows.Forms.CheckBox hboutputcb;
     }
 }
 

@@ -11,6 +11,7 @@ using static ioctlpus.Utilities.NativeMethods;
 using static ioctlpus.Utilities.IOCTL;
 using System.Drawing;
 using System.Text;
+using System.Globalization;
 
 namespace ioctlpus
 {
@@ -36,7 +37,7 @@ namespace ioctlpus
             // Setup initial parameters.
             tbDevicePath.Text = @"\\.\PhysicalDrive0";
             tbIOCTL.Text = "70000";
-            hbInputCb.Checked = true; //默认宽字节输入
+            hbInputCb.Checked = false; //默认宽字节输入
             nudInputSize.ValueChanged += NudInputSize_ValueChanged;
             nudOutputSize.ValueChanged += NudOutputSize_ValueChanged;
         }
@@ -231,7 +232,16 @@ namespace ioctlpus
             MemSet(Marshal.UnsafeAddrOfPinnedArrayElement(outputBuffer, 0), 0, (int)hbOutputLength);
 
             uint ioctl = Convert.ToUInt32(tbIOCTL.Text, 16);
-            DeviceIoControl(sfh, ioctl, inputBuffer, inputSize, outputBuffer, outputSize, ref returnedBytes, IntPtr.Zero);
+
+            if(hboutputcb.Checked)
+            {
+                //指定输出地址
+                IntPtr fakeOut = (IntPtr)int.Parse(hboutputtb.Text, NumberStyles.HexNumber);
+                functions.DeviceIoControl(sfh, ioctl, inputBuffer, inputSize, fakeOut, outputSize, ref returnedBytes, IntPtr.Zero);
+            }
+            else {
+                DeviceIoControl(sfh, ioctl, inputBuffer, inputSize, outputBuffer, outputSize, ref returnedBytes, IntPtr.Zero);
+            }
             int errorCode = Marshal.GetLastWin32Error();
             sfh.Close();
 
