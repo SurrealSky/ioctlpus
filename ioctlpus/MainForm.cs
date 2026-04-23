@@ -37,6 +37,46 @@ namespace ioctlpus
             tbDevicePath.Text = @"\\.\PhysicalDrive0";
             tbIOCTL.Text = "70000";
             hbInputCb.Checked = true; //Ä¬ÈÏ¿í×Ö½ÚÊäÈë
+            nudInputSize.ValueChanged += NudInputSize_ValueChanged;
+            nudOutputSize.ValueChanged += NudOutputSize_ValueChanged;
+        }
+
+        private void NudOutputSize_ValueChanged(object sender, EventArgs e)
+        {
+            int value = (int)nudOutputSize.Value;
+            DynamicByteProvider requestData = hbOutput.ByteProvider as DynamicByteProvider;
+            if (requestData.Length > value)
+            {
+                requestData.DeleteBytes(value, requestData.Length - value);
+            }
+            else if (requestData.Length < value)
+            {
+                byte[] newValues = new byte[value];
+                requestData.Bytes.CopyTo(newValues);
+                requestData.DeleteBytes(0, requestData.Length);
+                requestData.InsertBytes(0, newValues);
+
+            }
+            this.hbOutput.Invalidate();
+        }
+
+        private void NudInputSize_ValueChanged(object sender, EventArgs e)
+        {
+            int value = (int)nudInputSize.Value;
+            DynamicByteProvider requestData = hbInput.ByteProvider as DynamicByteProvider;
+            if (requestData.Length > value)
+            {
+                requestData.DeleteBytes(value, requestData.Length - value);
+            }
+            else if (requestData.Length < value)
+            {
+                byte[] newValues = new byte[value];
+                requestData.Bytes.CopyTo(newValues);
+                requestData.DeleteBytes(0, requestData.Length);
+                requestData.InsertBytes(0, newValues);
+
+            }
+            this.hbInput.Invalidate();
         }
 
         /// <summary>
